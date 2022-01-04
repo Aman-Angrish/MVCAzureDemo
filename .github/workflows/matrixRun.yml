@@ -1,0 +1,17 @@
+name: GitHub-Actions-Matrix-Run
+on: push
+
+jobs:
+  node-versions:
+    strategy:
+      matrix:
+        node-version: [6,8,10]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log node version
+        run: node-v
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Log node version after matrix
+        run: node-v
