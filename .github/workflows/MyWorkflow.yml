@@ -1,0 +1,17 @@
+name: GitHub Actions Practise
+on: push
+jobs:
+  Explore-GitHub-Actions:
+  runs-on: ubuntu-latest
+  steps:
+    - run: |
+        pwd
+        echo "Hello World"
+        ls -a
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    - run: |
+        pwd
+        echo "After check out"
+        ls -a
+    - run: echo "This job's status is ${{ job.status }}."
