@@ -28,5 +28,5 @@ jobs:
       - name: Log node version after matrix
         run: |
           node -v
-          echo: $IS_UBUNTU_8
+          echo $IS_UBUNTU_8
         
