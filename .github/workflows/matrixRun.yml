@@ -22,11 +22,9 @@ jobs:
           $list.Add(@{"runs_on"="aa";"runsonbranch"="always";})
           $list.Add(@{"runs_on"="bb";"runsonbranch"="always";})
           $list.Add(@{"runs_on"="cc";"runsonbranch"="always";})
-          $list.Add(@{"runs_on"="dd";"runsonbranch"="always";})
+          $list.Add(@{"runs_on"="dd";"runsonbranch"="always";})        
 
-          $customers = @{$list}
-
-          $jsonBase.Add($customers)
+          $jsonBase.Add("Data",$list)
           $jsonBase | ConvertTo-Json -Depth 10
           
    outputs:
