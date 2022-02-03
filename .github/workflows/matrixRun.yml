@@ -16,7 +16,7 @@ jobs:
           $jsonBase = @{}
           $list = New-Object System.Collections.ArrayList
 
-          $runners = "aa,bb,cc,dd"
+          $runners = "windows-latest,ubuntu-latest"
           $runnerList = $runners.split(",")
           
           foreach($runner in $runnerList){
