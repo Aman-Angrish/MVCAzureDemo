@@ -10,11 +10,12 @@ jobs:
         run: |
           echo "::set-output name=runner1::windows-latest"
           echo "::set-output name=runner2::ubuntu-latest"
+                   
+          $jsonBase = @{}
+          $jsonBase.Add("runs_on",aa)
+          $jsonBase.Add("runsonbranch",always)
+          $jsonBase | ConvertTo-Json
           
-          $myObject = "{ runs_on = 'aa' runsonbranch = 'always' }" 
-          
-          $myObject | ConvertTo-Json
-          #ConvertTo-Json -InputObject $myObj
    outputs:
       runner1: ${{ steps.identify.outputs.runner1 }}
       runner2: ${{ steps.identify.outputs.runner1 }}
