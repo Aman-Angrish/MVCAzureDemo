@@ -2,10 +2,22 @@ name: GitHub-Actions-Matrix-Run
 on: push
 
 jobs:
+  job1:
+   runs-on: [windows-latest]
+   steps:
+      - name: Log node version
+        id: identify
+        run: |
+          echo "::set-output name=runner1::windows-latest"
+          echo "::set-output name=runner2::ubuntu-latest"
+   outputs:
+      runner1: ${{ steps.identify.outputs.runner1 }}
+      runner2: ${{ steps.identify.outputs.runner1 }}
   node-versions:
+    needs: [job1]
     strategy:
       matrix:
-        os: [macos-latest,ubuntu-latest,windows-latest]
+        os: [ "${{ needs.job1.outputs.runner1 }}", "${{ needs.job1.outputs.runner2 }}" ]
 #         node-version: [6,8,10]
 #         include: 
 #           - os: ubuntu-latest
