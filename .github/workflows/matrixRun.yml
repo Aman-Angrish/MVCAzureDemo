@@ -14,12 +14,9 @@ jobs:
           foreach($runner in $runnersList) {
             echo "$runner"
           }
-          $myObject = "[PSCustomObject]@{
-                        runs_on = '#'
-                        runsonbranch = 'always'
-                    }"
+          $myObject = "[PSCustomObject]@{ runs_on = '#' runsonbranch = 'always' }"
           
-          $myObject.replace("#","xyz")          
+          $myObject = $myObject.replace("#","xyz")          
           
           ConvertTo-Json -InputObject $myObject
    outputs:
