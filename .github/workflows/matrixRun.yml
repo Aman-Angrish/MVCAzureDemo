@@ -10,15 +10,11 @@ jobs:
         run: |
           echo "::set-output name=runner1::windows-latest"
           echo "::set-output name=runner2::ubuntu-latest"
-          $runnersList = "aa,bb,cc".split(",")
-          foreach($runner in $runnersList) {
-            echo "$runner"
-          }
-          $myObject = "{ runs_on = '#' runsonbranch = 'always' }"
           
-          $myObject = $myObject.replace("#","xyz")          
-          $myObj = [PSCustomObject]@ + $myObject
-          ConvertTo-Json -InputObject $myObj
+          $myObject = "{ runs_on = 'aa' runsonbranch = 'always' }" 
+          
+          $myObject | ConvertTo-Json
+          #ConvertTo-Json -InputObject $myObj
    outputs:
       runner1: ${{ steps.identify.outputs.runner1 }}
       runner2: ${{ steps.identify.outputs.runner1 }}
