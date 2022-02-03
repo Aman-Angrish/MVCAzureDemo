@@ -11,20 +11,17 @@ jobs:
           echo "::set-output name=runner1::windows-latest"
           echo "::set-output name=runner2::ubuntu-latest"
                    
-          $jsonBase = @{}
-          $jsonBase.Add("runs_on","aa")
-          $jsonBase.Add("runsonbranch","always")
-          $jsonBase | ConvertTo-Json
+          
           
           $jsonBase = @{}
-          $list = New-Object System.Collections.ArrayList
+          #$list = New-Object System.Collections.ArrayList
 
-          $list.Add(@{"runs_on"="aa";"runsonbranch"="always";})
-          $list.Add(@{"runs_on"="bb";"runsonbranch"="always";})
-          $list.Add(@{"runs_on"="cc";"runsonbranch"="always";})
-          $list.Add(@{"runs_on"="dd";"runsonbranch"="always";})        
+          $jsonBase.Add(@{"runs_on"="aa";"runsonbranch"="always";})
+          $jsonBase.Add(@{"runs_on"="bb";"runsonbranch"="always";})
+          $jsonBase.Add(@{"runs_on"="cc";"runsonbranch"="always";})
+          $jsonBase.Add(@{"runs_on"="dd";"runsonbranch"="always";})        
 
-          $jsonBase.Add("Data",$list)
+          #$jsonBase.Add("Data",$list)
           $jsonBase | ConvertTo-Json -Depth 10
           
    outputs:
