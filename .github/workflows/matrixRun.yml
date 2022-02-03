@@ -19,6 +19,7 @@ jobs:
                         runsonbranch = 'always'
                     })
           $myObject = $myObject -replace "#", "server"
+          echo "$myObject"
           ConvertTo-Json -InputObject $myObject
    outputs:
       runner1: ${{ steps.identify.outputs.runner1 }}
