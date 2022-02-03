@@ -14,10 +14,14 @@ jobs:
           foreach($runner in $runnersList) {
             echo "$runner"
           }
-          $myObject = [PSCustomObject]@{
-                        runs_on = '*'
+          $myObject = [PSCustomObject]@(@{
+                        runs_on = 'aa'
                         runsonbranch = 'always'
-                    }
+                    },
+                    @{
+                        runs_on = 'bb'
+                        runsonbranch = 'always'
+                    })
           ConvertTo-Json -InputObject $myObject
    outputs:
       runner1: ${{ steps.identify.outputs.runner1 }}
