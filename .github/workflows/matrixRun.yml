@@ -12,8 +12,8 @@ jobs:
           echo "::set-output name=runner2::ubuntu-latest"
                    
           $jsonBase = @{}
-          $jsonBase.Add("runs_on",aa)
-          $jsonBase.Add("runsonbranch",always)
+          $jsonBase.Add("runs_on","aa")
+          $jsonBase.Add("runsonbranch","always")
           $jsonBase | ConvertTo-Json
           
    outputs:
