@@ -11,8 +11,8 @@ jobs:
           echo "::set-output name=runner1::windows-latest"
           echo "::set-output name=runner2::ubuntu-latest"
           $runnersList = "aa,bb,cc".split(",")
-          foreach(runner in $runnersList) {
-            echo "runner"
+          foreach($runner in $runnersList) {
+            echo "$runner"
           }
           $myObject = [PSCustomObject]@{
                         runs_on = '*'
