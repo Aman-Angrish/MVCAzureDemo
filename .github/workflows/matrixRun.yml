@@ -10,7 +10,7 @@ jobs:
         run: |
           echo "::set-output name=runner1::windows-latest"
           echo "::set-output name=runner2::ubuntu-latest"
-          $runnersAll = "@{Account="User01";Domain="Domain01";Admin="True"}"
+          $runnersAll = "@{Account='User01';Domain='Domain01';Admin='True'}"
           $runnersAll | ConvertTo-Json -Compress"
    outputs:
       runner1: ${{ steps.identify.outputs.runner1 }}
