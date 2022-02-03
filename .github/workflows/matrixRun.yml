@@ -19,8 +19,7 @@ jobs:
                         runsonbranch = 'always'
                     }"
           
-          $myObject.replace("#","xyz")
-          echo "$myObject"
+          $myObject.replace("#","xyz")          
           
           ConvertTo-Json -InputObject $myObject
    outputs:
