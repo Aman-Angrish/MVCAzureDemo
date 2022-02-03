@@ -18,7 +18,8 @@ jobs:
             $list.Add(@{"runs_on"="$runner";"runsonbranch"="always";})
           }      
 
-          $jsonBase.Add("Data",$list)
+          $jsonBase.Add($list)
+          #$jsonBase.Add("Data",$list)
           $jsonBase | ConvertTo-Json -Depth 10
           
    
