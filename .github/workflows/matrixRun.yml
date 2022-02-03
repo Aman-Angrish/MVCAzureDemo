@@ -10,7 +10,7 @@ jobs:
         run: |
           echo "::set-output name=runner1::windows-latest"
           echo "::set-output name=runner2::ubuntu-latest"
-          $runnersAll = "runs_on,aaa,runsonbranch,always}"
+          $runnersAll = "runs_on,aaa,runsonbranch,always"
           $runnersAll | ConvertFrom-Csv | ConvertTo-Json
    outputs:
       runner1: ${{ steps.identify.outputs.runner1 }}
