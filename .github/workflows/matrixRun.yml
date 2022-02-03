@@ -14,14 +14,16 @@ jobs:
           
           
           $jsonBase = @{}
-          #$list = New-Object System.Collections.ArrayList
+          $list = New-Object System.Collections.ArrayList
 
-          $jsonBase.Add(@{"runs_on"="aa";"runsonbranch"="always";})
-          $jsonBase.Add(@{"runs_on"="bb";"runsonbranch"="always";})
-          $jsonBase.Add(@{"runs_on"="cc";"runsonbranch"="always";})
-          $jsonBase.Add(@{"runs_on"="dd";"runsonbranch"="always";})        
+          $runners = "aa,bb,cc,dd"
+          $runnerList = $runners.split(",")
+          
+          foreach($runner in $runnerList){
+            $list.Add(@{"runs_on"="$runner";"runsonbranch"="always";})
+          }      
 
-          #$jsonBase.Add("Data",$list)
+          $jsonBase.Add("Data",$list)
           $jsonBase | ConvertTo-Json -Depth 10
           
    outputs:
