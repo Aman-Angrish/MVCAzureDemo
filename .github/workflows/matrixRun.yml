@@ -15,10 +15,10 @@ jobs:
             echo "$runner"
           }
           $myObject = [PSCustomObject]@(@{
-                        runs_on = '*'
+                        runs_on = '#'
                         runsonbranch = 'always'
                     })
-          $myObject = $myObject -replace "*", "server"
+          $myObject = $myObject -replace "#", "server"
           ConvertTo-Json -InputObject $myObject
    outputs:
       runner1: ${{ steps.identify.outputs.runner1 }}
