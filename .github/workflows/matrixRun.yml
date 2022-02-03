@@ -1,16 +1,7 @@
 name: GitHub-Actions-Matrix-Run
 on: push
 
-jobs:
-  job:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-    - id: set-matrix
-      run: |
-        JSON=$(cat ./your.json)
-        echo "::set-output name=matrix::${JSON//'%'/'%25'}"
+jobs:  
   job1:
    runs-on: [windows-latest]
    steps:
@@ -19,8 +10,11 @@ jobs:
         run: |
           echo "::set-output name=runner1::windows-latest"
           echo "::set-output name=runner2::ubuntu-latest"
-          $runnersAll = "runs_on,aaa,runsonbranch,always"
-          $runnersAll | ConvertFrom-Csv | ConvertTo-Json
+          $myObject = [PSCustomObject]@{
+                        runs_on = 'aa'
+                        runsonbranch = 'always'
+                    }
+          ConvertTo-Json -InputObject $myObject
    outputs:
       runner1: ${{ steps.identify.outputs.runner1 }}
       runner2: ${{ steps.identify.outputs.runner1 }}
