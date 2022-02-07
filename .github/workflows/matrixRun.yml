@@ -27,12 +27,15 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ windows-latest,ubuntu-latest, ]
+        os: [ windows-latest,ubuntu-latest, macOS-latest ]
     runs-on: ${{ matrix.os }}
       
     steps:
       - name: Log node version
-        run: node -v
+        run: |
+          node -v
+          if [ "$RUNNER_OS" == "macOS" ]; then
+            exit 1
   job2:
    needs: [node-versions]
    runs-on: [windows-latest]
