@@ -25,7 +25,6 @@ jobs:
    
   node-versions:
     needs: [job1]
-    continue-on-error: true
     
     strategy: 
       fail-fast: true
