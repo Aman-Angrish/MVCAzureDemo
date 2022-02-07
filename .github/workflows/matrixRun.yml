@@ -38,6 +38,7 @@ jobs:
             exit 1
   job2:
    needs: [node-versions]
+   if: always
    runs-on: [windows-latest]
    steps:
       - name: Log node version
