@@ -47,7 +47,7 @@ jobs:
           node -v
   job3:
    needs: [job2]
-   if: always
+   if: always()
    runs-on: [windows-latest]
    steps:
       - name: Log node version
