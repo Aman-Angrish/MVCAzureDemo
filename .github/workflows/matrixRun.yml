@@ -25,6 +25,7 @@ jobs:
    
   node-versions:
     needs: [job1]
+    continue-on-error: true
     strategy:      
       matrix:
         os: [ windows-latest,ubuntu-latest, macOS-latest ]
