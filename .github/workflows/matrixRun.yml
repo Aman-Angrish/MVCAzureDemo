@@ -9,6 +9,7 @@ jobs:
       - name: Log node version
         id: identify
         run: |          
+          echo "/"Aman/""
           $jsonBase = @{}
           $list = New-Object System.Collections.ArrayList
 
