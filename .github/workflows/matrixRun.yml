@@ -8,7 +8,7 @@ jobs:
     steps:
       - run: |
           mkdir git-completion
-          
+          cd git-completion
           #git init
           #git config core.sparsecheckout true
           #echo .github/workflows/ >> .git/info/sparse-checkout
