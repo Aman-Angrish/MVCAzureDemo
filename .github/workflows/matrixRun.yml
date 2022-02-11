@@ -18,7 +18,7 @@ jobs:
           cd sparse-checkout-example/
           git sparse-checkout init --cone
           git sparse-checkout set client/android
-      - run: cd git-completion
+      - run: cd sparse-checkout-example/
 #   job1:
 #    runs-on: [windows-latest]
 #    steps:
