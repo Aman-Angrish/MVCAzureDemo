@@ -9,11 +9,12 @@ jobs:
       - run: |
           mkdir git-completion
           cd git-completion
-          git init
-          git config core.sparsecheckout true
-          echo .github/workflows/ >> .git/info/sparse-checkout
-          git remote add -f origin https://github.com/Aman-Angrish/MVCAzureDemo.git         
-          git pull origin master
+          #git init
+          #git config core.sparsecheckout true
+          #echo .github/workflows/ >> .git/info/sparse-checkout
+          #git remote add -f origin https://github.com/Aman-Angrish/MVCAzureDemo.git         
+          #git pull origin master
+          git clone "https://github.com/Aman-Angrish/MVCAzureDemo.git" --no-checkout ".github" --depth 1
       - run: cd git-completion
 #   job1:
 #    runs-on: [windows-latest]
