@@ -15,8 +15,8 @@ jobs:
             git pull origin master
             
        - run: |            
-            cd microservice1/
-            dir
+            dir microservice1/
+            
 #   job1:
 #    runs-on: [windows-latest]
 #    steps:
