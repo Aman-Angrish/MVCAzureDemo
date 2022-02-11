@@ -14,7 +14,9 @@ jobs:
             git remote add -f origin https://github.com/Aman-Angrish/MVCAzureDemo.git         
             git pull origin master
             
-       - run: dir
+       - run: |
+            dir
+            cd microservice1/
 #   job1:
 #    runs-on: [windows-latest]
 #    steps:
