@@ -11,8 +11,8 @@ jobs:
           cd git-completion
           git init
           git config core.sparsecheckout true
-          echo contrib/completion/ >> .git/info/sparse-checkout
-          git remote add -f origin https://github.com/git/git.git         
+          echo .github/workflows/ >> .git/info/sparse-checkout
+          git remote add -f origin https://github.com/Aman-Angrish/MVCAzureDemo.git         
           git pull origin master
       - run: cd git-completion
 #   job1:
