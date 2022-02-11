@@ -14,11 +14,10 @@ jobs:
           #echo .github/workflows/ >> .git/info/sparse-checkout
           #git remote add -f origin https://github.com/Aman-Angrish/MVCAzureDemo.git         
           #git pull origin master
-          git clone --filter=blob:none --no-checkout --depth 1 --sparse https://github.com/Aman-Angrish/MVCAzureDemo
-          cd MVCAzureDemo
+          git clone --filter=blob:none --no-checkout https://github.com/derrickstolee/sparse-checkout-example
+          cd sparse-checkout-example/
           git sparse-checkout init --cone
-          git sparse-checkout add .github/workflows 
-          git checkout
+          git sparse-checkout set client/android
       - run: cd git-completion
 #   job1:
 #    runs-on: [windows-latest]
