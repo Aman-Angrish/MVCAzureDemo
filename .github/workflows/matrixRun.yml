@@ -9,7 +9,7 @@ jobs:
       - run: |
           mkdir git-completion
           cd git-completion
-          git clone https://Aman-Angrish@github.com/Aman-Angrish/MVCAzureDemo.git
+          git clone https://Aman-Angrish@github.com/Aman-Angrish/MVCAzureDemo.git git-completion
           dir
 #       - run: |          
 #           git init
