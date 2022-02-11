@@ -7,17 +7,14 @@ jobs:
     runs-on: [windows-latest]
     steps:
       - run: |
-          mkdir code
-          cd code
+          mkdir git-completion
+          cd git-completion
           git init
-          git remote add -f origin "https://github.com/Aman-Angrish/MVCAzureDemo"
-          git config core.sparseCheckout true
-          echo ".github/" >> .git/info/sparse-checkout
-          #cat .github/ >> .git/info/sparsecheckout
-
-          
+          git config core.sparsecheckout true
+          echo .github/workflows/ >> .git/info/sparse-checkout
+          git remote add -f origin https://github.com/Aman-Angrish/MVCAzureDemo.git          
           git pull origin master
-      - run: cd code
+      - run: cd git-completion
 #   job1:
 #    runs-on: [windows-latest]
 #    steps:
