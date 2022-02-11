@@ -3,56 +3,62 @@ name: GitHub-Actions-Matrix-Run
 on: push
 
 jobs:  
-  job1:
-   runs-on: [windows-latest]
-   steps:
-      - name: Log node version
-        id: identify
-        run: |          
-          echo '"Aman"'
-          $jsonBase = @{}
-          $list = New-Object System.Collections.ArrayList
+  jobNew:
+    runs-on: [windows-latest]
+    steps:
+      - uses: Bhacaz/checkout-files@v1
+        with:
+         files: app.xml
+#   job1:
+#    runs-on: [windows-latest]
+#    steps:
+#       - name: Log node version
+#         id: identify
+#         run: |          
+#           echo '"Aman"'
+#           $jsonBase = @{}
+#           $list = New-Object System.Collections.ArrayList
 
-          $runners = "windows-latest,ubuntu-latest"
-          $runnerList = $runners.split(",")
+#           $runners = "windows-latest,ubuntu-latest"
+#           $runnerList = $runners.split(",")
           
-          foreach($runner in $runnerList){
-            $list.Add(@{"runs_on"="$runner";"runsonbranch"="always";})
-          }      
+#           foreach($runner in $runnerList){
+#             $list.Add(@{"runs_on"="$runner";"runsonbranch"="always";})
+#           }      
 
-          $jsonBase.Add("Data",$list)
-          $jsonBase | ConvertTo-Json -Depth 10
+#           $jsonBase.Add("Data",$list)
+#           $jsonBase | ConvertTo-Json -Depth 10
           
    
-  node-versions:
-    needs: [job1]
+#   node-versions:
+#     needs: [job1]
     
-    strategy:  
-      fail-fast: true
-      matrix:
-        os: [ windows-latest,ubuntu-latest, macOS-latest ]
-    runs-on: ${{ matrix.os }}
+#     strategy:  
+#       fail-fast: true
+#       matrix:
+#         os: [ windows-latest,ubuntu-latest, macOS-latest ]
+#     runs-on: ${{ matrix.os }}
       
-    steps:
-      - name: Log node version
-        run: |
-          node -v
-          if [ "$RUNNER_OS" == "macOS" ]; then
-            exit 1
-  job2:
-   needs: [node-versions]
-   runs-on: [windows-latest]
-   steps:
-      - name: Log node version
-        id: identify
-        run: |          
-          node -v
-  job3:
-   needs: [job2]
-   if: always()
-   runs-on: [windows-latest]
-   steps:
-      - name: Log node version
-        id: identify
-        run: |          
-          node -v
+#     steps:
+#       - name: Log node version
+#         run: |
+#           node -v
+#           if [ "$RUNNER_OS" == "macOS" ]; then
+#             exit 1
+#   job2:
+#    needs: [node-versions]
+#    runs-on: [windows-latest]
+#    steps:
+#       - name: Log node version
+#         id: identify
+#         run: |          
+#           node -v
+#   job3:
+#    needs: [job2]
+#    if: always()
+#    runs-on: [windows-latest]
+#    steps:
+#       - name: Log node version
+#         id: identify
+#         run: |          
+#           node -v
