@@ -8,9 +8,6 @@ jobs:
     steps:
       
        - run: |    
-            mkdir git-completion
-            cd git-completion
-            git config --global http.sslVerify false
             git init
             git config core.sparsecheckout true
             echo microservice1/ >> .git/info/sparse-checkout
