@@ -15,7 +15,7 @@ jobs:
           #git remote add -f origin https://github.com/Aman-Angrish/MVCAzureDemo.git         
           #git pull origin master
           git clone "https://github.com/Aman-Angrish/MVCAzureDemo.git" --no-checkout ".github" --depth 1
-      - run: cd git-completion
+      - run: cd .github
 #   job1:
 #    runs-on: [windows-latest]
 #    steps:
