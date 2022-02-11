@@ -14,6 +14,7 @@ jobs:
           git config core.sparseCheckout true
           echo "MVCAzureDemo/.github/" >> .git/info/sparse-checkout
           git pull origin master
+      - run: cd code
 #   job1:
 #    runs-on: [windows-latest]
 #    steps:
