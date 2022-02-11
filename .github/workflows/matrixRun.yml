@@ -8,13 +8,14 @@ jobs:
     steps:
       - run: |
           mkdir git-completion
-          cd git-completion
+          
           #git init
           #git config core.sparsecheckout true
           #echo .github/workflows/ >> .git/info/sparse-checkout
           #git remote add -f origin https://github.com/Aman-Angrish/MVCAzureDemo.git         
           #git pull origin master
-          git clone --filter=blob:none --no-checkout --depth 1 --sparse https://github.com/Aman-Angrish/MVCAzureDemo.git
+          git clone --filter=blob:none --no-checkout --depth 1 --sparse https://github.com/Aman-Angrish/MVCAzureDemo
+          cd git-completion
           git sparse-checkout init --cone
           git sparse-checkout add .github/workflows 
           git checkout
