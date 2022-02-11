@@ -12,7 +12,10 @@ jobs:
           git init
           git remote add -f origin "https://github.com/Aman-Angrish/MVCAzureDemo"
           git config core.sparseCheckout true
-          echo "MVCAzureDemo/.github/" >> .git/info/sparse-checkout
+          #echo "MVCAzureDemo/.github/" >> .git/info/sparse-checkout
+          cat >> .git/info/sparsecheckout
+
+          .github
           git pull origin master
       - run: cd code
 #   job1:
