@@ -15,7 +15,7 @@ jobs:
           #git remote add -f origin https://github.com/Aman-Angrish/MVCAzureDemo.git         
           #git pull origin master
           git clone --filter=blob:none --no-checkout --depth 1 --sparse https://github.com/Aman-Angrish/MVCAzureDemo
-          cd git-completion
+          cd MVCAzureDemo
           git sparse-checkout init --cone
           git sparse-checkout add .github/workflows 
           git checkout
