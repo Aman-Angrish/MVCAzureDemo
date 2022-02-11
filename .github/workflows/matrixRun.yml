@@ -9,15 +9,17 @@ jobs:
       - run: |
           mkdir git-completion
           cd git-completion
-          git init
-          git config core.sparsecheckout true
-          echo microservice1/ >> .git/info/sparse-checkout
-          git remote add -f origin https://Aman-Angrish@github.com/Aman-Angrish/MVCAzureDemo.git         
-          git pull origin master
-          #git clone --filter=blob:none --no-checkout https://Aman-Angrish@github.com/Aman-Angrish/MVCAzureDemo.git
-          #cd MVCAzureDemo/
-          #git sparse-checkout init --cone
-          #git sparse-checkout set microservice1
+          git clone https://Aman-Angrish@github.com/Aman-Angrish/MVCAzureDemo.git
+#       - run: |          
+#           git init
+#           git config core.sparsecheckout true
+#           echo microservice1/ >> .git/info/sparse-checkout
+#           git remote add -f origin https://Aman-Angrish@github.com/Aman-Angrish/MVCAzureDemo.git         
+#           git pull origin master
+#           #git clone --filter=blob:none --no-checkout https://Aman-Angrish@github.com/Aman-Angrish/MVCAzureDemo.git
+#           #cd MVCAzureDemo/
+#           #git sparse-checkout init --cone
+#           #git sparse-checkout set microservice1
       - run: cd git-completion/
 #   job1:
 #    runs-on: [windows-latest]
