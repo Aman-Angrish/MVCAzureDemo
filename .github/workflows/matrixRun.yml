@@ -10,6 +10,7 @@ jobs:
           mkdir git-completion
           cd git-completion
           git clone https://Aman-Angrish@github.com/Aman-Angrish/MVCAzureDemo.git
+          dir
 #       - run: |          
 #           git init
 #           git config core.sparsecheckout true
