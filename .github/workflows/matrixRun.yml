@@ -9,6 +9,7 @@ jobs:
       - uses: Bhacaz/checkout-files@v1
         with:
          files: app.xml
+         token: ${{ secrets.GITHUBTOKEN }}
 #   job1:
 #    runs-on: [windows-latest]
 #    steps:
