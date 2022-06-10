@@ -65,11 +65,10 @@ jobs:
           sudo apt install unixodbc-dev -y
           sudo pip install pyodbc
           sudo pip install deepdiff
-          sudo apt install python-yaml
-          #sudo yum install python-yaml
+          sudo apt install python-yaml          
           sudo apt install -y zip unzip
           
       - name: Execute Script
         run: |
           chmod 777 .github/scripts/yaml_validation.py
-          python3 .github/scripts/yaml_validation.py "/_w/MVCAzureDemo/YamlAdminCheckout/.github/workflows/YamlWorkflowValidator.yml" "/_w/MVCAzureDemo/YamlAdminCheckout_feature/.github/workflows/YamlWorkflowValidator.yml"
+          python3 .github/scripts/yaml_validation.py "/home/runner/work/MVCAzureDemo/MVCAzureDemo/YamlAdminCheckout/.github/workflows/YamlWorkflowValidator.yml" "/home/runner/work/MVCAzureDemo/MVCAzureDemo/YamlAdminCheckout_feature/.github/workflows/YamlWorkflowValidator.yml"
