@@ -37,17 +37,8 @@ jobs:
           token: ${{ secrets.GIT_PAT }}
           path: YamlAdminCheckout_Feature
           ref: ${{github.REF}}
-          fetch-depth: 0
-          
-      - run: |
-          pwd
-          cd YamlAdminCheckout_Feature/.github/workflows
-          ls -lart
-     
-      - run: |
-          pwd
-          cd YamlAdminCheckout/.github/workflows
-          ls -lart
+          fetch-depth: 0        
+      
           
       - name: Setup
         run: |
