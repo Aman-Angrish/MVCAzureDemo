@@ -41,11 +41,9 @@ jobs:
           
       - run: |
           pwd
-          cd YamlAdminCheckout/.github/workflows
-          ls -lart
           cd YamlAdminCheckout_Feature/.github/workflows
-          pwd
           ls -lart
+          
           
       - name: Setup
         run: |
