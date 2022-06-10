@@ -23,7 +23,7 @@ jobs:
         id: checkout_repo_main_branch
         uses: actions/checkout@v2
         with:
-          repository: MVCAzureDemo
+          repository: Aman-Angrish/MVCAzureDemo
           token: ${{ secrets.GIT_PAT }}
           path: YamlAdminCheckout
           ref: main
@@ -33,7 +33,7 @@ jobs:
         id: checkout_repo_feature_branch
         uses: actions/checkout@v2
         with:
-          repository: MVCAzureDemo
+          repository: Aman-Angrish/MVCAzureDemo
           token: ${{ secrets.GIT_PAT }}
           path: YamlAdminCheckout_Feature
           ref: ${{github.REF}}
