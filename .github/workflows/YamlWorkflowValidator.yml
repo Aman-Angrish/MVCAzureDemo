@@ -23,7 +23,7 @@ jobs:
         id: checkout_repo_main_branch
         uses: actions/checkout@v2
         with:
-          repository: YamlValidatorRepo
+          repository: MVCAzureDemo
           token: ${{ secrets.GIT_PAT }}
           path: YamlAdminCheckout
           ref: main
@@ -33,7 +33,7 @@ jobs:
         id: checkout_repo_feature_branch
         uses: actions/checkout@v2
         with:
-          repository: YamlValidatorRepo
+          repository: MVCAzureDemo
           token: ${{ secrets.GIT_PAT }}
           path: YamlAdminCheckout_Feature
           ref: ${{github.REF}}
@@ -58,4 +58,4 @@ jobs:
       - name: Execute Script
         run: |
           chmod 777 .github/scripts/yaml_validation.py
-          python3 .github/scripts/yaml_validation.py "/_w/YamlAdminRepo/YamlAdminCheckout/.github/workflows/YamlWorkflowValidator.yml" "/_w/YamlAdminRepo/YamlAdminCheckout_feature/.github/workflows/YamlWorkflowValidator.yml"
+          python3 .github/scripts/yaml_validation.py "/_w/MVCAzureDemo/YamlAdminCheckout/.github/workflows/YamlWorkflowValidator.yml" "/_w/MVCAzureDemo/YamlAdminCheckout_feature/.github/workflows/YamlWorkflowValidator.yml"
