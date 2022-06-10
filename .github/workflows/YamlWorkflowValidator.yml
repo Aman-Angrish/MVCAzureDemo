@@ -46,14 +46,14 @@ jobs:
       - name: Setup
         run: |
           export PATH="/usr/bin/python3/bin:$PATH"
-          python --version
-          apt-get update
-          apt-get --qq -y install pip
-          apt-get install unixodbc-dev -y
-          pip install pyodbc
-          pip install deepdiff
-          pipinstall pyyaml
-          apt-get install -y zip unzip
+          sudo python --version
+          sudo apt-get update
+          sudo apt-get --qq -y install pip
+          sudo apt-get install unixodbc-dev -y
+          sudo pip install pyodbc
+          sudo pip install deepdiff
+          sudo pipinstall pyyaml
+          sudo apt-get install -y zip unzip
           
       - name: Execute Script
         run: |
