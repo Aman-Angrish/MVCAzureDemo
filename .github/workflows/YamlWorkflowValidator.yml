@@ -1,0 +1,61 @@
+name:YamlWorkflowValidator
+
+on:
+
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    
+jobs:
+
+  yaml-validation:
+    runs-on: [ubuntu-latest]
+    
+    steps:
+      - name: 'Checkout repository on branch: ${{github.REF}}'
+        uses: actions/checkout@v2
+        with:
+           ref: ${{ github.REF }}
+           fetch-depth: 0
+           
+      - name: Checkout Repo Main Branch
+        id: checkout_repo_main_branch
+        uses: actions/checkout@v2
+        with:
+          repository: YamlValidatorRepo
+          token: ${{ secrets.GIT_PAT }}
+          path: YamlAdminCheckout
+          ref: main
+          fetch-depth: 0
+    
+      - name: Checkout Repo Feature Branch
+        id: checkout_repo_feature_branch
+        uses: actions/checkout@v2
+        with:
+          repository: YamlValidatorRepo
+          token: ${{ secrets.GIT_PAT }}
+          path: YamlAdminCheckout_Feature
+          ref: ${{github.REF}}
+          fetch-depth: 0
+          
+      - run: |
+          cd YamlAdminCheckout/.github/workflows
+          ls -lart
+          
+      - name: Setup
+        run: |
+          export PATH="/usr/bin/python3/bin:$PATH"
+          python --version
+          apt-get update
+          apt-get --qq -y install pip
+          apt-get install unixodbc-dev -y
+          pip install pyodbc
+          pip install deepdiff
+          pipinstall pyyaml
+          apt-get install -y zip unzip
+          
+      - name: Execute Script
+        run: |
+          chmod 777 .github/scripts/yaml_validation.py
+          python3 .github/scripts/yaml_validation.py "/_w/YamlAdminRepo/YamlAdminCheckout/.github/workflows/YamlWorkflowValidator.yml" "/_w/YamlAdminRepo/YamlAdminCheckout_feature/.github/workflows/YamlWorkflowValidator.yml"
