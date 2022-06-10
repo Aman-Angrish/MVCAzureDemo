@@ -60,7 +60,7 @@ jobs:
           export PATH="/usr/bin/python3/bin:$PATH"
           sudo python --version
           sudo apt update
-          sudo apt --qq -y install pip
+          sudo apt -y install pip
           sudo apt install unixodbc-dev -y
           sudo pip install pyodbc
           sudo pip install deepdiff
