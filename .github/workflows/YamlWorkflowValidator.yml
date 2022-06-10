@@ -1,6 +1,5 @@
 name: YamlWorkflowValidator
 
-
 on:
 
   push:
@@ -27,7 +26,7 @@ jobs:
           repository: Aman-Angrish/MVCAzureDemo
           token: ${{ secrets.GIT_PAT }}
           path: YamlAdminCheckout
-          ref: main
+          ref: master
           fetch-depth: 0
     
       - name: Checkout Repo Feature Branch
