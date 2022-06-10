@@ -64,7 +64,8 @@ jobs:
           sudo apt install unixodbc-dev -y
           sudo pip install pyodbc
           sudo pip install deepdiff
-          sudo pipinstall pyyaml
+          sudo apt-get install python-yaml
+          sudo yum install python-yaml
           sudo apt install -y zip unzip
           
       - name: Execute Script
